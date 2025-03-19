@@ -8,25 +8,27 @@ The analysis uses RNA-seq data from The Cancer Genome Atlas Breast Cancer (TCGA-
 ## Environment Setup
 The analysis is performed in a dedicated conda environment running in WSL (Ubuntu 22.04):
 
-### Create and activate environment  
-conda create -n rnaseq python=3.8  
+```bash
+# Create and activate environment
+conda create -n rnaseq python=3.8
 conda activate rnaseq
 
-### Configure bioconda channels  
-conda config --add channels defaults  
-conda config --add channels bioconda  
-conda config --add channels conda-forge  
+# Configure bioconda channels
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
 
-### Install core tools  
-conda install -y r-base  
-conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gsea  
-conda install -y r-ggplot2 r-pheatmap  
+# Install core tools
+conda install -y r-base
+conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gsea
+conda install -y r-ggplot2 r-pheatmap
 
-### Install TCGAbiolinks  
-if (!requireNamespace("BiocManager", quietly = TRUE))  
-&nbsp; install.packages("BiocManager")  
-BiocManager::install("TCGAbiolinks")  
-BiocManager::install("SummarizedExperiment")  
+# Install TCGAbiolinks
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("TCGAbiolinks")
+BiocManager::install("SummarizedExperiment")
+```
 
 ## Analysis Workflow
 ### 1. Data Acquisition
@@ -53,6 +55,12 @@ BiocManager::install("SummarizedExperiment")
 - Volcano plots of differential expression
 - Heatmaps of top differentially expressed genes
 - Pathway visualization
+
+## Repository Structure
+- `data/`: Contains downloaded and processed data
+- `scripts/`: R scripts for each analysis step
+- `results/`: Output files and visualizations
+- `docs/`: Documentation and notes
 
 ## Dependencies
 - R >= 4.0
