@@ -10,7 +10,7 @@ The analysis is performed in a dedicated conda environment running in WSL (Ubunt
 
 ```bash
 # Create and activate environment
-conda create -n rnaseq python=3.8
+conda create -n rnaseq python=3.13.2
 conda activate rnaseq
 
 # Configure bioconda channels
@@ -32,9 +32,11 @@ BiocManager::install("SummarizedExperiment")
 
 ## Analysis Workflow
 ### 1. Data Acquisition
-- Query TCGA-BRCA RNA-seq data
-- Select matched tumor-normal pairs
-- Download and prepare count matrices
+- Query the TCGA-BRCA database to retrieve RNA-seq gene expression data.
+- Select 5 matched tumor-normal pairs for a controlled differential expression analysis.
+- Download pre-processed count matrices from GDC using the STAR - Counts workflow.
+- Convert the data into a RangedSummarizedExperiment object, including sample annotations and metadata.
+- Save the dataset for further analysis.
 
 ### 2. Exploratory Data Analysis
 - Quality control and filtering
