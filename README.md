@@ -20,7 +20,7 @@ conda config --add channels conda-forge
 
 # Install core tools
 conda install -y r-base
-conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gseabase
+conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gseabase bioconductor-apeglm
 conda install -y r-ggplot2 r-pheatmap
 
 # Install TCGAbiolinks
