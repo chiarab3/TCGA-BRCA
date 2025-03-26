@@ -20,7 +20,7 @@ conda config --add channels conda-forge
 
 # Install core tools
 conda install -y r-base
-conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gsea
+conda install -y bioconductor-deseq2 bioconductor-enhancedvolcano bioconductor-gseabase
 conda install -y r-ggplot2 r-pheatmap
 
 # Install TCGAbiolinks
@@ -39,14 +39,19 @@ BiocManager::install("SummarizedExperiment")
 - Save the dataset for further analysis.
 
 ### 2. Exploratory Data Analysis
-- Quality control and filtering
-- Principal Component Analysis (PCA)
-- Sample clustering and visualization
+- Inspect dataset dimensions, sample metadata, and gene annotations for quality control.
+- Visualize the distribution of raw gene expression counts to assess data quality.
+- Compute sample-wise Pearson correlation and generate a heatmap to evaluate relationships between samples.
+- Filter out low-expression genes with a mean count <10 across samples to remove noise.
+- Perform Principal Component Analysis (PCA) to examine clustering patterns and identify potential batch effects or outliers.
+- Save the filtered dataset for downstream differential expression analysis.
 
 ### 3. Differential Expression Analysis
-- Normalization using DESeq2
-- Statistical modeling of gene expression changes
-- Identification of significantly differentially expressed genes
+- Normalize raw RNA-seq counts using DESeq2 to correct for sequencing depth differences.
+- Fit a statistical model to identify genes with significant expression changes between tumor and normal samples.
+- Extract differentially expressed genes (DEGs) using adjusted p-value < 0.05 and log2FoldChange > 1 or < -1.
+- Generate a Volcano Plot to visualize the most significant changes in gene expression.
+- Save results for downstream functional analysis.
 
 ### 4. Functional Analysis
 - Pathway enrichment analysis
