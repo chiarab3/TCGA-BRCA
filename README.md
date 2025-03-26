@@ -54,14 +54,11 @@ BiocManager::install("SummarizedExperiment")
 - Save results for downstream functional analysis.
 
 ### 4. Functional Analysis
-- Pathway enrichment analysis
-- Gene set enrichment analysis (GSEA)
-- Biological interpretation of results
-
-### 5. Visualization
-- Volcano plots of differential expression
-- Heatmaps of top differentially expressed genes
-- Pathway visualization
+- Gene Ontology (GO) Analysis to identify enriched biological processes, molecular functions, and cellular components in differentially expressed genes.
+- KEGG Pathway Analysis to determine biological pathways altered in breast cancer, such as metabolic and signaling pathways.
+- Gene Set Enrichment Analysis (GSEA) to identify gene sets that show significant coordinated expression changes across tumor and normal samples.
+- Visualization of enriched pathways using bar plots, dot plots, and GSEA enrichment scores.
+- Biological interpretation of results.
 
 ## Repository Structure
 - `data/`: Contains downloaded and processed data
@@ -75,9 +72,12 @@ BiocManager::install("SummarizedExperiment")
   - TCGAbiolinks
   - SummarizedExperiment
   - DESeq2
+  - GenomicRanges
   - EnhancedVolcano
   - clusterProfiler
+  - org.Hs.eg.db
+  - enrichplot
+  - DOSE
 - Additional R packages:
   - ggplot2
   - pheatmap
-  - RColorBrewer
