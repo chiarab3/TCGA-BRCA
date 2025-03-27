@@ -1,5 +1,4 @@
 # RNA-seq Differential Expression Analysis: Breast Cancer Tumor vs. Normal
-
 This repository contains the code and documentation for a differential expression analysis pipeline comparing breast cancer tumor tissue with matched normal tissue using TCGA-BRCA RNA-seq data. The workflow leverages Bioconductor packages to identify genes with altered expression in cancer and explore their functional significance.
 
 ## Data Source
@@ -9,7 +8,7 @@ The analysis uses RNA-seq data from The Cancer Genome Atlas Breast Cancer (TCGA-
 The analysis is performed in a dedicated conda environment running in WSL (Ubuntu 22.04):
 
 ```bash
-# Create and activate environment
+# Create and activate Conda environment
 conda create -n rnaseq python=3.13.2
 conda activate rnaseq
 
@@ -28,6 +27,16 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("TCGAbiolinks")
 BiocManager::install("SummarizedExperiment")
+```
+
+## How to Run
+After setting up the environment, you can run the analysis with:
+
+```bash
+Rscript scripts/01_data_acquisition.R
+Rscript scripts/02_exploratory_analysis.R
+Rscript scripts/03_differential_expression.R
+Rscript scripts/04_functional_analysis.R
 ```
 
 ## Analysis Workflow
@@ -58,7 +67,6 @@ BiocManager::install("SummarizedExperiment")
 - KEGG Pathway Analysis to determine biological pathways altered in breast cancer, such as metabolic and signaling pathways.
 - Gene Set Enrichment Analysis (GSEA) to identify gene sets that show significant coordinated expression changes across tumor and normal samples.
 - Visualization of enriched pathways using bar plots, dot plots, and GSEA enrichment scores.
-- Biological interpretation of results.
 
 ## Repository Structure
 - `data/`: Contains downloaded and processed data
@@ -81,3 +89,8 @@ BiocManager::install("SummarizedExperiment")
 - Additional R packages:
   - ggplot2
   - pheatmap
+
+### Example: Volcano Plot
+A volcano plot visualizing differentially expressed genes:
+
+![Volcano Plot](results/volcano_plot.png)
