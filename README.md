@@ -68,6 +68,11 @@ Rscript scripts/04_functional_analysis.R
 - Gene Set Enrichment Analysis (GSEA) to identify gene sets that show significant coordinated expression changes across tumor and normal samples.
 - Visualization of enriched pathways using bar plots, dot plots, and GSEA enrichment scores.
 
+### Example: Volcano Plot
+A volcano plot visualizing differentially expressed genes:
+
+![Volcano Plot](results/volcano_plot.png)
+
 ## Repository Structure
 - `data/`: Contains downloaded and processed data
 - `scripts/`: R scripts for each analysis step
@@ -90,7 +95,3 @@ Rscript scripts/04_functional_analysis.R
   - ggplot2
   - pheatmap
 
-### Example: Volcano Plot
-A volcano plot visualizing differentially expressed genes:
-
-![Volcano Plot](results/volcano_plot.png)
