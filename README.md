@@ -9,7 +9,7 @@ The analysis is performed in a dedicated conda environment running in WSL (Ubunt
 
 ```bash
 # Create and activate Conda environment
-conda create -n rnaseq python=3.13.2
+conda create -n rnaseq python=3.8
 conda activate rnaseq
 
 # Configure bioconda channels
